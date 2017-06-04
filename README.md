@@ -62,6 +62,8 @@ Property | Description
 **CommandParameter** | The parameter to pass to the **Command** property.
 
 ### Events
+Event | Description
+--- | ---
 **DateRangeChanged** | Occurs when the date range is changed, just before the **Command** is fired.
                         
 ### UI-related properties						
@@ -78,8 +80,8 @@ Property | Description
 **DatePickerCaptionTextBlockStyle** |  The style that is used when rendering the "From" and "To" TextBlock elements that label the date pickers. Setting the properties **TextAlignment** and **VerticalAlignment** in this style has no effect. 
 **NavigationButtonTextBlockStyle** | The style that is used when rendering the TextBlock content of the previous and next range buttons.
 
-##Styling the internal controls
-###How to avoid changing an internal control style of the DateRangePicker by a global default style
+## Styling the internal controls
+### How to avoid changing an internal control style of the DateRangePicker by a global default style
 A default global style targeted to DatePicker, Button or ComboBox may affect the internals of the DateRangePicker. 
 To avoid this, define the empty default style for the same target type but in the scope of the control. 
 For example, if your default style is
@@ -107,8 +109,7 @@ set the internal button style like this:
             </rh:DateRangePicker
 
 ```
-
-###How to apply a custom style to the internal elements
+### How to apply a custom style to the internal elements
 DateRangePicker has TextBlock, Button, DatePicker and ComboBox elements inside. 
 TextBlocks can be styled with dedicated properties **DatePickerCaptionTextBlockStyle** and
 **NavigationButtonTextBlockStyle**. To apply a custom style to the other elements, 
