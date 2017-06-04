@@ -1,0 +1,179 @@
+﻿<!-- Copyright (c) Rollinghours.com owners. All rights reserved.  
+Licensed under the MIT License. See LICENSE file in the solution root for full license information. -->
+<Window x:Class="Rh.DateRange.Picker.Examples.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:Rh.DateRange.Picker.Examples.ViewModel"
+        xmlns:local="clr-namespace:Rh.DateRange.Picker.Examples"
+        xmlns:rh="http://schemas.rollinghours.com/wpf" 
+        MinWidth="740" MinHeight="670"
+        Width="{Binding MinWidth, RelativeSource={RelativeSource Self}}"
+        Height="{Binding MinHeight, RelativeSource={RelativeSource Self}}"
+        Title="Date Range Picker Demo">
+
+    <Window.DataContext>
+        <vm:ExampleViewModel/>
+    </Window.DataContext>
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ObjectDataProviders.xaml"/>
+                <ResourceDictionary Source="RegularControlStyles.xaml"/>
+                <ResourceDictionary Source="SampleCustomStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <local:StyleToIsCheckedConverter x:Key="StyleToIsCheckedConverter"/>
+            <local:OrientationToIsCheckedConverter x:Key="OrientationToIsCheckedConverter"/>
+            <local:SelectedDateFormatToIsCheckedConverter x:Key="SelectedDateFormatToIsCheckedConverter"/>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <TextBlock Grid.Column="0" Grid.Row="0" Style="{StaticResource TextBlockHeader}" Text="DateRangePicker Control:" />
+
+        <Border Grid.Column="0" Grid.Row="1" Background="LightYellow" Padding="5 10" HorizontalAlignment="Stretch">
+            <rh:DateRangePicker x:Name="Picker"
+                                From="{Binding RangeFrom}"
+                                To="{Binding RangeTo}"
+                                KindOfRange="{Binding KindOfRange}"
+                                Command="{Binding DateRangeCommand}"
+                                />
+        </Border>
+        
+        <DockPanel Grid.Column="0" Grid.Row="3" HorizontalAlignment="Stretch">
+            <TextBlock Style="{StaticResource TextBlockHeader}" Text="Non-inherited properties:" />
+            <Button Margin="0 10 0 0" Width="150" HorizontalAlignment="Right"
+                    Content="Reset To Defaults" Click="ResetButton_Click"/>
+        </DockPanel>
+        
+        <TabControl Grid.Column="0" Grid.Row="4">
+            <TabItem Header="Core properties, bound to ViewModel">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="180"/>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Column="0" Grid.Row="0" Text="From"/>
+                    <DatePicker Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" SelectedDate="{Binding RangeFrom}"/>
+
+                    <TextBlock Grid.Column="0" Grid.Row="1" 
+                               Text="To"/>
+                    <DatePicker Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" SelectedDate="{Binding RangeTo}"/>
+
+                    <TextBlock Grid.Column="0" Grid.Row="2" Text="KindOfRange" />
+                    <ComboBox Grid.Column="1" Grid.Row="2"
+                              ItemsSource="{Binding Source={StaticResource KindOfRangeValues}}" 
+                              SelectedValue="{Binding KindOfRange}" />
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="UI properties">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="180"/>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Orientation"/>
+                    <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding Orientation, ElementName=Picker}"/>
+                    <ToggleButton Grid.Column="2" Grid.Row="0" Content="Toggle" Margin="3"
+                                  IsChecked="{Binding Orientation, ElementName=Picker, 
+                                        Converter={StaticResource OrientationToIsCheckedConverter}}" />
+
+                    <TextBlock Grid.Column="0" Grid.Row="1" Text="SpacerWidth"/>
+                    <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding SpacerWidth, ElementName=Picker}"/>
+                    <Slider Grid.Column="2" Grid.Row="1" Minimum="0" Maximum="20"  Value="{Binding SpacerWidth, ElementName=Picker}" />
+
+                    <TextBlock Grid.Column="0" Grid.Row="2" Text="SpacerHeight"/>
+                    <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding SpacerHeight, ElementName=Picker}"/>
+                    <Slider Grid.Column="2" Grid.Row="2" Minimum="0" Maximum="20"  Value="{Binding SpacerHeight, ElementName=Picker}" />
+
+                    <TextBlock Grid.Column="0" Grid.Row="3" Text="SelectedDateFormat"/>
+                    <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding SelectedDateFormat, ElementName=Picker}"/>
+                    <ToggleButton Grid.Column="2" Grid.Row="3" Content="Toggle" Margin="3"
+                                  IsChecked="{Binding SelectedDateFormat, ElementName=Picker, 
+                                        Converter={StaticResource SelectedDateFormatToIsCheckedConverter}}"/>
+
+                    <TextBlock Grid.Column="0" Grid.Row="4" Text="PreviousRangeButtonText"/>
+                    <TextBox Grid.Column="1" Grid.Row="4" Text="{Binding PreviousRangeButtonText, ElementName=Picker}"/>
+
+                    <TextBlock Grid.Column="0" Grid.Row="5" Text="NextRangeButtonText"/>
+                    <TextBox Grid.Column="1" Grid.Row="5" Text="{Binding NextRangeButtonText, ElementName=Picker}"/>
+
+                    <TextBlock Grid.Column="0" Grid.Row="6" Text="DatePickerMinWidth"/>
+                    <TextBlock Grid.Column="1" Grid.Row="6" Text="{Binding DatePickerMinWidth, ElementName=Picker}"/>
+                    <Slider Grid.Column="2" Grid.Row="6" Minimum="125" Maximum="300"  Value="{Binding DatePickerMinWidth, ElementName=Picker}" />
+
+                    <TextBlock Grid.Column="0" Grid.Row="7" Text="DatePickerToCaptionMinWidth"/>
+                    <TextBlock Grid.Column="1" Grid.Row="7" Text="{Binding DatePickerToCaptionMinWidth, ElementName=Picker}"/>
+                    <Slider Grid.Column="2" Grid.Row="7" Minimum="12" Maximum="50"  Value="{Binding DatePickerToCaptionMinWidth, ElementName=Picker}" />
+
+                    <TextBlock Grid.Column="0" Grid.Row="8" Text="NavigationButtonMinWidth"/>
+                    <TextBlock Grid.Column="1" Grid.Row="8" Text="{Binding NavigationButtonMinWidth, ElementName=Picker}"/>
+                    <Slider Grid.Column="2" Grid.Row="8" Minimum="10" Maximum="100"  Value="{Binding NavigationButtonMinWidth, ElementName=Picker}" />
+
+                    <TextBlock Grid.Column="0" Grid.Row="9" Text="RangeComboBoxMinWidth"/>
+                    <TextBlock Grid.Column="1" Grid.Row="9" Text="{Binding RangeComboBoxMinWidth, ElementName=Picker}"/>
+                    <Slider Grid.Column="2" Grid.Row="9" Minimum="30" Maximum="300"  Value="{Binding RangeComboBoxMinWidth, ElementName=Picker}" />
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Individual custom styles">
+                <StackPanel Margin="15">
+                    <TextBlock Text="Apply a custom style to..."/>
+                    <StackPanel Margin="10">
+
+                        <CheckBox Content="DatePicker captions"
+                                  IsChecked="{Binding DatePickerCaptionTextBlockStyle, ElementName=Picker, 
+                                    Converter={StaticResource StyleToIsCheckedConverter}, 
+                                    ConverterParameter={StaticResource CustomDatePickerCaptionTextBlockStyle}}" />
+
+                        <CheckBox Content="Navigation button captions" 
+                                  IsChecked="{Binding NavigationButtonTextBlockStyle, ElementName=Picker, 
+                                    Converter={StaticResource StyleToIsCheckedConverter}, 
+                                    ConverterParameter={StaticResource CustomNavigationButtonTextBlockStyle}}" />
+
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+        <StatusBar Grid.Row="5" Margin="0 10 0 0">
+            <StatusBarItem>
+                <TextBlock Text="{Binding Status}"/>
+            </StatusBarItem>
+        </StatusBar> 
+    </Grid>
+</Window>
