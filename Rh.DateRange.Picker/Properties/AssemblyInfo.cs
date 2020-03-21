@@ -1,4 +1,4 @@
-﻿// Copyright (c) Rollinghours.com owners. All rights reserved.  
+﻿// Copyright (c) Alexander Zhmerik. All rights reserved.  
 // Licensed under the MIT License. See LICENSE file in the solution root for full license information.  
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -55,9 +55,9 @@ using System.Windows.Markup;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.9.1.0")]
-[assembly: AssemblyFileVersion("0.9.1.0")]
-[assembly: AssemblyInformationalVersion("0.9.1.0")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyInformationalVersion("1.0.0.0")]
 
 [assembly: XmlnsPrefix("http://schemas.rollinghours.com/wpf", "rh")]
 [assembly: XmlnsDefinition("http://schemas.rollinghours.com/wpf", "Rh.DateRange.Picker")]
