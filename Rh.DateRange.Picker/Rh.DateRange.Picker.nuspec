@@ -11,7 +11,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>Initial release</releaseNotes>
-    <copyright>Copyright $author$ 2017</copyright>
+    <copyright>Copyright $author$</copyright>
     <tags>wpf date range span picker control</tags>
   </metadata>
 </package>
