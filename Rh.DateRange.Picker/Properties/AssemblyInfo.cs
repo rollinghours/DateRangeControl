@@ -12,9 +12,9 @@ using System.Windows.Markup;
 [assembly: AssemblyTitle("Rh.DateRange.Picker")]
 [assembly: AssemblyDescription("A WPF control to provide a human-friendly way to select a date range.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Rollinghours.com")]
+[assembly: AssemblyCompany("Alexander Zhmerik")]
 [assembly: AssemblyProduct("Rh.DateRange.Picker")]
-[assembly: AssemblyCopyright("Copyright © 2017 Rollinghours.com owners")]
+[assembly: AssemblyCopyright("Copyright © Alexander Zhmerik")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
