@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rh.DateRange.Picker", "Rh.DateRange.Picker\Rh.DateRange.Picker.csproj", "{96416AAD-BC52-46AA-BB24-3AFF91FC5473}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rh.DateRange.Picker", "Rh.DateRange.Picker\Rh.DateRange.Picker.csproj", "{96416AAD-BC52-46AA-BB24-3AFF91FC5473}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rh.DateRange.Picker.Examples", "Rh.DateRange.Picker.Examples\Rh.DateRange.Picker.Examples.csproj", "{F3DF22C2-10F4-429D-9C4D-007E4D899DF6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rh.DateRange.Picker.Tests", "Rh.DateRange.Picker.Tests\Rh.DateRange.Picker.Tests.csproj", "{F34E4C66-A154-4B8F-984A-4923F63925AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rh.DateRange.Picker.Examples", "Rh.DateRange.Picker.Examples\Rh.DateRange.Picker.Examples.csproj", "{F3DF22C2-10F4-429D-9C4D-007E4D899DF6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B71E5B4F-6230-4563-B6C4-C90B170405E4}"
 	ProjectSection(SolutionItems) = preProject
@@ -17,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 		Rh.DateRange.Picker\Rh.DateRange.Picker.licenseheader = Rh.DateRange.Picker\Rh.DateRange.Picker.licenseheader
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rh.DateRange.Picker.Tests", "Rh.DateRange.PickerTests\Rh.DateRange.Picker.Tests.csproj", "{88C764E3-DF67-4DA7-B9FB-81B833452E7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,12 +32,15 @@ Global
 		{F3DF22C2-10F4-429D-9C4D-007E4D899DF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3DF22C2-10F4-429D-9C4D-007E4D899DF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3DF22C2-10F4-429D-9C4D-007E4D899DF6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F34E4C66-A154-4B8F-984A-4923F63925AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F34E4C66-A154-4B8F-984A-4923F63925AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F34E4C66-A154-4B8F-984A-4923F63925AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F34E4C66-A154-4B8F-984A-4923F63925AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88C764E3-DF67-4DA7-B9FB-81B833452E7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88C764E3-DF67-4DA7-B9FB-81B833452E7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88C764E3-DF67-4DA7-B9FB-81B833452E7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88C764E3-DF67-4DA7-B9FB-81B833452E7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B364186F-D30B-49C4-93A1-376E2990DB75}
 	EndGlobalSection
 EndGlobal

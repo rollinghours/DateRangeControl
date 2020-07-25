@@ -1,134 +1,28 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{96416AAD-BC52-46AA-BB24-3AFF91FC5473}</ProjectGuid>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <OutputType>library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Rh.DateRange.Picker</RootNamespace>
-    <AssemblyName>Rh.DateRange.Picker</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWPF>true</UseWPF>
+    <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
+  </PropertyGroup> 
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xaml">
-      <RequiredTargetFramework>4.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="WindowsBase" />
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Common\DateRangeExtensions.cs" />
-    <Compile Include="Common\DateTimeExtensions.cs" />
-    <Compile Include="Common\RangeCustom.cs" />
-    <Compile Include="Common\DateRangeChangedEventArgs.cs" />
-    <Compile Include="Common\DateRangeHelper.cs" />
-    <Compile Include="Common\DateRangeList.cs" />
-    <Compile Include="Common\DateRangeKind.cs" />
-    <Compile Include="Common\IDateRange.cs" />
-    <Compile Include="Common\RangeFirstDayOfWeekAware.cs" />
-    <Compile Include="Common\RangeLast30Days.cs" />
-    <Compile Include="Common\RangeLast7Days.cs" />
-    <Compile Include="Common\RangeTheLastYear.cs" />
-    <Compile Include="Common\RangeMonthToDate.cs" />
-    <Compile Include="Common\RangePresenter.cs" />
-    <Compile Include="Common\RangeDay.cs" />
-    <Compile Include="Common\RangeMonth.cs" />
-    <Compile Include="Common\RangeLastMonth.cs" />
-    <Compile Include="Common\RangeLastWeek.cs" />
-    <Compile Include="Common\RangeLastYear.cs" />
-    <Compile Include="Common\RangeWeekToDate.cs" />
-    <Compile Include="Common\RangeYearToDate.cs" />
-    <Compile Include="Common\RangeYesterday.cs" />
-    <Compile Include="DateRangeValue.cs" />
-    <Compile Include="FirstDayOfWeekProvider.cs" />
-    <Compile Include="IFirstDayOfWeekProvider.cs" />
-    <Compile Include="Resources\Resource.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resource.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Common\RangeWeek.cs" />
-    <Compile Include="Common\RangeYear.cs" />
-    <Page Include="Themes\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="DateRangePicker.cs">
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="OrientationToSpacerSizeConverter.cs" />
-    <Compile Include="OrientationToTextAlignmentConverter.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
     <None Include="..\DateRangeControl.licenseheader">
       <Link>DateRangeControl.licenseheader</Link>
     </None>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
     <AppDesigner Include="Properties\" />
-    <None Include="Rh.DateRange.Picker.nuspec" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Resource.de.resx" />
-    <EmbeddedResource Include="Resources\Resource.es.resx" />
-    <EmbeddedResource Include="Resources\Resource.fr.resx" />
-    <EmbeddedResource Include="Resources\Resource.it.resx" />
-    <EmbeddedResource Include="Resources\Resource.pl.resx" />
-    <EmbeddedResource Include="Resources\Resource.pt.resx" />
-    <EmbeddedResource Include="Resources\Resource.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Resource.ru.resx" />
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  <ItemGroup>
+    <Compile Remove="Properties\Resources.Designer.cs" />
+    <EmbeddedResource Remove="Properties\Resources.resx" />
+    <EmbeddedResource Remove="Properties\Resources.ru-RU.resx" />
+  </ItemGroup>
 </Project>
