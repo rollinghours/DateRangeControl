@@ -1,5 +1,5 @@
 # Rh.DateRange.Picker
-A WPF control for choosing date ranges. Derives from Control. Requires .NET Framework 4.0.
+A WPF control for choosing date ranges. Derives from Control. Requires .NET COre 3.1.
 
 ![Sample Rh.DateRange.Picker screenshot](docs/DateRangePickerHorizontal.png)
 
