@@ -7,10 +7,10 @@
     <authors>$author$</authors>
     <owners>$author$</owners>
     <license type="expression">MIT</license>
-    <projectUrl>https://github.com/rollinghours/DateRangeControl</projectUrl>
+    <projectUrl>https://github.com/vkbishnoi/DateRangeControl</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Updated copyright notice</releaseNotes>
+    <releaseNotes>Ported to .Net core 3.1</releaseNotes>
     <copyright>Copyright $author$</copyright>
     <tags>wpf date range span picker control</tags>
   </metadata>  

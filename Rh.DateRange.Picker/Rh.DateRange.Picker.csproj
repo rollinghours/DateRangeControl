@@ -5,12 +5,21 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWPF>true</UseWPF>
     <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
+    <PackageId>Rh.DateRange.Picker.NetCore</PackageId>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/vkbishnoi/DateRangeControl</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/vkbishnoi/DateRangeControl</RepositoryUrl>
+    <PackageReleaseNotes>Ported to .net core 3.1</PackageReleaseNotes>
   </PropertyGroup> 
   <ItemGroup>
     <None Include="..\DateRangeControl.licenseheader">
       <Link>DateRangeControl.licenseheader</Link>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.0.0">
